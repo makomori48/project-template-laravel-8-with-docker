@@ -36,5 +36,9 @@
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "yup": "^0.32.6"
+    },
+    "dependencies": {
+        "@material-ui/pickers": "^3.2.10",
+        "@material-ui/styles": "^4.11.2"
     }
 }
