@@ -94,8 +94,7 @@ function Example() {
 					todos={todos}
 				/>
 			</div>
-			<p>text</p>
-			<p>text</p>
+		
 
 		</div>
 	);
