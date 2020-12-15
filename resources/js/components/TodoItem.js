@@ -12,13 +12,15 @@ function TodoItem({ todos, setTodos, setStatus, filter }) {
   return (
     <div className='todoitem'>
       <h1>
-      TRAINEE PROFILE
+      PROFILE
       </h1>
       <select className='todo__select' onChange={stat} name="ddd">
         <option value="all">Show All</option>
         <option value="st">EMPLOYEE</option>
         <option value="aca">TRAINEE</option>
       </select>
+
+     
       <ul>
         {filter.map((todo) => (
           <Todo

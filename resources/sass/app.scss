@@ -6,3 +6,317 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+::-webkit-scrollbar{ display: none;}
+
+.app{
+  display: flex;
+  flex: 1;
+  height: 100%;
+  background-image: radial-gradient( circle 263px at 100.2% 3%,  rgba(12,85,141,1) 31.1%, rgba(205,181,93,1) 36.4%, rgba(244,102,90,1) 50.9%, rgba(199,206,187,1) 60.7%, rgba(249,140,69,1) 72.5%, rgba(12,73,116,1) 72.6% );
+   
+}
+
+.left__bar{
+  flex: 0.04;
+}
+
+.input__form{
+  flex: 0.5;
+}
+
+.view{
+  flex: 0.46;
+}
+
+.todoitem{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow-y: scroll;
+	
+}
+
+.todoitem > h1{
+	margin-top: 30px;
+	color: white;
+}
+.todoitem > select{
+	height: 33px;
+	border: 1.6px solid black;
+	margin-top: 20px;
+	text-align: center;
+	outline: none;
+}
+
+.todo__con{
+	position: relative;
+	width: 400px;
+	height: 350px;
+	border-radius: 6px;
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 17px;
+	margin-bottom: 10px;
+	background-image: radial-gradient( circle farthest-corner at 18.7% 37.8%,  rgba(250,250,250,1) 0%, rgba(225,234,238,1) 90% );
+}
+
+.todo__con > img{
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin: 15px 0;
+}
+
+.todo__con > p{
+	margin: 3px 0;
+}
+
+.todo__con  mark{
+	border-radius: 4px;
+}
+
+.btn__employee{
+	width: 60%;
+}
+
+.btn__employee > button{
+	font-weight: 600;
+	cursor: pointer;
+	width: 100%;
+	height: 30px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 6px;
+	border: none;
+	background-image: radial-gradient( circle 272px at 34.9% 49.3%,  rgba(219,214,0,1) 0%, rgba(61,253,147,1) 100.7% );
+}
+
+.btn__delete {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+	
+}
+
+.btn__delete > input{
+	height: 30px;
+	border-radius: 6px;
+	border: none;
+ 
+	
+}
+
+.btn__delete :focus{
+	outline: none;
+}
+
+.btn__delete > button{
+	cursor: pointer;
+
+	margin-left: 10px;
+	width: 50px;
+	height: 30px;
+	border-radius: 6px;
+	border: none;
+	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,197,61,1) 0%, rgba(255,94,7,1) 90% );
+}
+
+.navbar{
+	height: 100vh;
+	background-image: radial-gradient( circle farthest-corner at -2.9% 119.3%,  rgba(0,47,73,1) 0%, rgb(25, 158, 247) 100.7% );
+	display: flex;
+	flex-direction: column;
+	gap: normal; 
+	justify-content: center;
+	z-index: 100;
+	align-items: center;
+	border-right: 1px solid rgb(133, 132, 132);
+	position: fixed;
+	width: 70px;
+}
+
+.navbar > img{
+	height: 38px;
+	width: 38px;
+	border-radius: 50%;
+	object-fit: cover;
+	position: absolute;
+	top: 20px;
+	border: 1px solid rgb(230, 227, 227);
+	cursor: pointer;
+}
+
+.navbar > .MuiSvgIcon-root{
+	color: rgb(184, 182, 182);
+	margin-bottom: 25px;
+	cursor: pointer;
+	
+}
+
+.home > .MuiSvgIcon-root:hover{
+	color: gray;
+}
+
+.home > .MuiSvgIcon-root {
+	color: white;
+	margin-bottom: 20px;
+	cursor: pointer;
+	font-size: 35px;
+	border-bottom: 1px solid rgb(213, 211, 219);
+ 
+	
+}
+
+.form__container{
+	/* background-color: #1D1D1F; */
+	height: 100vh;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+
+.form__input input ::placeholder{
+	margin-left: 15px !important ;
+}
+
+.form__container > h1{
+	margin-top: 30px;
+	color: white;
+}
+
+.form__input{
+	margin-top: 20px;
+	height: 600px;
+	width: 480px;
+	border-radius: 6px;
+	font-size: 18px;
+	padding: 15px 5px 5px 55px ;
+	background-image: radial-gradient( circle farthest-corner at -8.9% 51.2%,  rgba(255,124,0,1) 0%, rgba(255,124,0,1) 15.9%, rgba(255,163,77,1) 15.9%, rgb(54, 53, 52) 24.4%, rgba(19,30,37,1) 24.5%, rgba(19,30,37,1) 66% );
+}
+
+.form__input  label{
+	font-weight: 600;
+	color: rgb(209, 202, 202);
+	
+}
+
+.form__input input{
+ margin-top: 8px;
+ border-radius: 6px;
+ border: none;
+	height: 28px;
+	background-color: #eef0ee;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+	padding: 3px 10px;
+}
+
+.form__input input:focus{
+	outline: none;
+}
+
+.form__date > input {
+	height: 40px ;
+	width: 100px;
+	display: flex !important;
+	margin-bottom: 8px;
+}
+
+.form__gender{
+	display: flex;
+	align-items: center;
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.form__gender  input{
+	height: 14px;
+	width: 14px;
+	margin-bottom: 8px;
+	margin-left: 15px;
+	margin-right: 15px;
+
+}
+
+.form__select{
+	margin-bottom: 15px;
+	height: 25px;
+	width: 120px;
+ border: 1.6px solid black;
+ 
+}
+
+.btn__group{
+	display: flex;
+ justify-content: flex-end;
+	align-items: center;
+	margin-top: 25px;
+
+}
+
+.btn__submit {
+	width: 80px;
+	height: 35px;
+	background-image: linear-gradient( 108deg,  rgba(0,166,81,1) 9.3%, rgba(0,209,174,1) 118.3% );
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+}
+.btn__submit > button{
+	color: #f0f3f0;
+	height: 80%;
+	width: 80%;
+	background: transparent;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 17px;
+	border: none;
+
+}
+
+.btn__clear {
+	width: 80px;
+	height: 35px;
+	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,197,61,1) 0%, rgba(255,94,7,1) 90% );
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	margin: 15px 30px;
+}
+.btn__clear > button{
+	color: #f0f3f0;
+
+	height: 80%;
+	width: 80%;
+	background: transparent;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 17px;
+	border: none;
+}
+
+
+
