@@ -7,6 +7,9 @@ import IconButton from "@material-ui/core/IconButton";
 import PhotoCamera from "@material-ui/icons/PhotoCamera";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -29,24 +32,47 @@ const useStyles = makeStyles(theme => ({
 	},
 
 	form__input: {
-		marginTop: "50px",
+		
 		height: "600px",
 		width: "480px",
 		borderRadius: "6px",
-		fontSize: "18px"
+		fontSize: "18px",
+		backgroundColor: "#D0D8D1",
+		color: "black",
+		padding: 35,
+		marginLeft: 20
 	},
 	input: {
 		display: "none"
 	},
 	container: {
 		display: "flex",
-		flexWrap: "wrap"
+		flexWrap: "wrap",
+		marginLeft: theme.spacing(1),
+		marginRight: theme.spacing(1)
 	},
 	textField: {
-		// backgroundColor: '#DAD5DB',
+		marginTop: 15,
 		marginLeft: theme.spacing(1),
 		marginRight: theme.spacing(1),
 		width: 200
+	},
+	position: {
+		marginTop: 15,
+		marginLeft: theme.spacing(1),
+		marginRight: theme.spacing(1),
+		width: 200
+	},
+	password: {
+		marginLeft: theme.spacing(1),
+		marginRight: theme.spacing(1),
+		width: 200
+	},
+	button: {
+		display: "flex",
+		justifyContent: "space-between",
+		marginTop: 30,
+		width: 180
 	}
 }));
 
@@ -115,7 +141,6 @@ function Form({
 			<h1 className={classes.h1}>ADD TRAINEE</h1>
 			<FormControl className={classes.form__input}>
 				<div className={classes.root}>
-					<p>Profile Pic.</p>
 					<input
 						accept="image/*"
 						className={classes.input}
@@ -146,7 +171,6 @@ function Form({
 					className={classes.textField}
 					id="standard-basic"
 					label="Name"
-					placeholder="firstname-lastname"
 					value={input}
 					onChange={e => setInput(e.target.value)}
 					type="text"
@@ -196,11 +220,11 @@ function Form({
 					<label>Female </label>
 				</div>
 
-				<FormControl className="posi">
-					<label>Position</label>
+				<FormControl className={classes.position}>
+					<InputLabel id="select-label">Position</InputLabel>
 
 					<Select
-						id="demo-posi"
+						labelId="select-label"
 						value={position}
 						onChange={e => setPosition(e.target.value)}
 					>
@@ -211,22 +235,30 @@ function Form({
 				</FormControl>
 
 				<br />
-				<label>Set password for delete : </label>
-				<textField
-					label="Password"
-					type="password"
-					value={password}
-					onChange={e => setPassword(e.target.value)}
-				/>
 
-				<div className="btn__group">
-					<div className="btn__submit">
+				<FormControl className={classes.password}>
+					<InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+					<Input
+						id="standard-adornment-password"
+						type="password"
+						value={password}
+						onChange={e => setPassword(e.target.value)}
+						endAdornment={
+							<InputAdornment position="end">
+								<IconButton aria-label="toggle password visibility"></IconButton>
+							</InputAdornment>
+						}
+					/>
+				</FormControl>
+
+				<div className={classes.button}>
+					<div >
 						<Button variant="contained" color="primary" onClick={onSubmit}>
 							Submit
 						</Button>
 					</div>
 
-					<div className="btn__clear">
+					<div>
 						<Button
 							variant="contained"
 							color="secondary"

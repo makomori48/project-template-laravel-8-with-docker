@@ -1,12 +1,30 @@
 import React from "react";
 import Todo from "./Todo";
 
+import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+    
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
+
 
 function TodoItem({ todos, setTodos, setStatus, filter }) {
   const stat = (e) => {
     setStatus(e.target.value);
   };
 
+  const classes = useStyles();
 
 
   return (
@@ -14,12 +32,17 @@ function TodoItem({ todos, setTodos, setStatus, filter }) {
       <h1>
       PROFILE
       </h1>
-      <select className='todo__select' onChange={stat} name="ddd">
-        <option value="all">Show All</option>
-        <option value="st">EMPLOYEE</option>
-        <option value="aca">TRAINEE</option>
-      </select>
-
+      <FormControl className={classes.formControl}>
+        <InputLabel id="demo-simple-select-label">FIlter</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"       
+          onChange={stat}
+        >
+          <MenuItem value='all'>Show All</MenuItem>
+          <MenuItem value='st'>EMPLOYEE</MenuItem>
+          <MenuItem value='aca'>TRAINEE</MenuItem>
+        </Select>
+      </FormControl>
      
       <ul>
         {filter.map((todo) => (
