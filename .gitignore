@@ -17,3 +17,6 @@ yarn-error.log
 /public/css
 /public/js
 /public/manifest.json
+
+coverage
+__snapshots__
