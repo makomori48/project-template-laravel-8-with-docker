@@ -28,8 +28,7 @@ function Todo({
 		} else if (toinput === "admin") {
 			setTodos(todos.filter(el => el.id !== todo.id));
 			setPass("");
-      alert("Delete!");
-      
+			alert("Delete!");
 		} else {
 			alert("Password is incorrect!");
 			setPass("");
@@ -56,38 +55,44 @@ function Todo({
 			<img src={pic} alt="" />
 
 			<p>
-				{" "}
 				<strong>Name : </strong> <mark>{text}</mark>
 			</p>
 			<p>
 				<strong>Email : </strong> {email}
 			</p>
 			<p>
-				{" "}
 				<strong>Gender : </strong> {gender}
 			</p>
 			<p>
 				<strong>Position : </strong> <mark> {position}</mark>
 			</p>
 			<p>
-				<strong>Date of birth : </strong> {`${birth}`}{" "}
+				<strong>Date of birth : </strong> {`${birth}`}
 			</p>
 
 			<div className="btn__employee">
 				{complete ? (
-					<button> EMPLOYEE </button>
+					<button className="jyy" onClick={completeFn}>
+						{" "}
+						EMPLOYEE{" "}
+					</button>
 				) : (
-					<button onClick={completeFn}>ADD TO EMPLOYEE</button>
+					<button className="jyy" onClick={completeFn}>
+						ADD TO EMPLOYEE
+					</button>
 				)}
 			</div>
 			<div className="btn__delete">
 				<input
+					className="kwon"
 					placeholder="enter password for delete"
 					type="password"
 					value={toinput}
 					onChange={e => setTodoInpit(e.target.value)}
 				/>
-				<button onClick={deleteFn}>Delete</button>
+				<button className="delta" onClick={deleteFn}>
+					Delete
+				</button>
 			</div>
 		</div>
 	);

@@ -168,7 +168,8 @@ function Form({
 				</div>
 
 				<TextField
-					className={classes.textField}
+				className='nameUser'
+					// className={classes.textField}
 					id="standard-basic"
 					label="Name"
 					value={input}
@@ -186,7 +187,8 @@ function Form({
 						label="Birthday"
 						type="date"
 						defaultValue="2017-05-24"
-						className={classes.container}
+						// className={classes.container}
+						className='bdUser'
 						InputLabelProps={{
 							shrink: true
 						}}
@@ -194,17 +196,20 @@ function Form({
 				</div>
 
 				<TextField
+				className='emailUser'
 					label="Email"
-					className={classes.textField}
+					// className={classes.textField}
 					value={email}
 					onChange={e => setEmail(e.target.value)}
 					type="email"
+					id='input_email'
 				/>
 				<br />
 				<div className="form__gender">
 					<label>Gender : </label>
 
 					<input
+					className='genderUser'
 						type="radio"
 						checked={gender === "Male"}
 						value="Male"
@@ -212,6 +217,8 @@ function Form({
 					/>
 					<label>Male </label>
 					<input
+					className='genderFUser'
+
 						type="radio"
 						checked={gender === "Female"}
 						value="Female"
@@ -224,6 +231,7 @@ function Form({
 					<InputLabel id="select-label">Position</InputLabel>
 
 					<Select
+					className='formSelect'
 						labelId="select-label"
 						value={position}
 						onChange={e => setPosition(e.target.value)}
@@ -236,9 +244,13 @@ function Form({
 
 				<br />
 
-				<FormControl className={classes.password}>
+				<FormControl 
+				// className={classes.password}
+				>
 					<InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
 					<Input
+				className='passUser'
+
 						id="standard-adornment-password"
 						type="password"
 						value={password}
@@ -253,16 +265,19 @@ function Form({
 
 				<div className={classes.button}>
 					<div >
-						<Button variant="contained" color="primary" onClick={onSubmit}>
+						<Button 
+						className='btnSub'
+						id='metoo' variant="contained" color="primary" onClick={onSubmit}>
 							Submit
 						</Button>
 					</div>
 
 					<div>
 						<Button
+							className='btnClear'
 							variant="contained"
 							color="secondary"
-							onClick={() => window.location.reload(true)}
+							// onClick={() => window.location.reload(true)}
 						>
 							Clear
 						</Button>
