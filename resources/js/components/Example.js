@@ -94,21 +94,17 @@ function Example() {
 					todos={todos}
 				/>
 			</div>
-		
-
 		</div>
 	);
 }
 
-function renderToDOM () {
-	if (document.getElementById('mainDiv')) {
-		ReactDOM.render(<Example />, document.getElementById('mainDiv'))
+function renderToDOM() {
+	if (document.getElementById("mainDiv")) {
+		ReactDOM.render(<Example />, document.getElementById("mainDiv"));
 	}
 }
-renderToDOM()
+renderToDOM();
 
-export { renderToDOM }
+export { renderToDOM };
 
-
-
-export default Example
+export default Example;

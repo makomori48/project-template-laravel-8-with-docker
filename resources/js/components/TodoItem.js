@@ -24,7 +24,7 @@ function TodoItem({ todos, setTodos, setStatus, filter }) {
 		<div className="todoitem">
 			<h1>PROFILE</h1>
 			<FormControl className={classes.formControl}>
-				<InputLabel id="demo-simple-select-label">FIlter</InputLabel>
+				<InputLabel id="demo-simple-select-label">Filter</InputLabel>
 				<Select
 					labelId="demo-simple-select-label"
 					onChange={e => setStatus(e.target.value)}
@@ -36,7 +36,7 @@ function TodoItem({ todos, setTodos, setStatus, filter }) {
 				</Select>
 			</FormControl>
 
-			<ul>
+			<ul className='dataMap' >
 				{filter.map(todo => (
 					<Todo
 						todo={todo}

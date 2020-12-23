@@ -1,13 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
 import { cleanup } from "@testing-library/react";
-
-Enzyme.configure({ adapter: new Adapter() });
+import { mount, shallow } from "enzyme";
 
 import Example, { renderToDOM } from "@components/Example";
+
+describe("mount", () => {
+	let wrapper;
+
+	beforeEach(() => {
+		wrapper = mount(<Example />);
+	});
+
+	it("init", () => {
+		const render = wrapper.find(".app");
+		expect(render).not.toBe("");
+	});
+});
+
+// it("init filter", () => {
+// 	const filMock = jest.fn();
+// 	const event = {
+// 		preventDefault() {},
+// 		target: { status: "st" }
+// 	};
+
+// 	const component = shallow(<Example filterFn={filMock} />);
+
+// 	component.find(filterFn).simulate("change", event);
+// 	expect(filterFn).toBe(true);
+// });
 
 describe("<Example/>", () => {
 	const originalRender = ReactDOM.render;
@@ -24,10 +47,6 @@ describe("<Example/>", () => {
 		ReactDOM.render = originalRender;
 	});
 
-	// it('render props without crashing', () => {
-	// 	render(<Example />)
-	// })
-
 	it("should render without crashing.", () => {
 		const component = shallow(<Example />);
 		const div = document.createElement("div");
@@ -40,5 +59,3 @@ describe("<Example/>", () => {
 		expect(ReactDOM.render).toHaveBeenCalled();
 	});
 });
-
-

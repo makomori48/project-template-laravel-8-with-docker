@@ -50,5 +50,8 @@
     "_moduleAliases": {
         "@root": ".",
         "@components": "resources/js/components"
+    },
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.11.6"
     }
 }

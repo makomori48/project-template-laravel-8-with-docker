@@ -30,8 +30,8 @@ function Todo({
 			setPass("");
 			alert("Delete!");
 		} else {
-			alert("Password is incorrect!");
 			setPass("");
+			alert("Password is incorrect!");
 		}
 	};
 
@@ -72,12 +72,9 @@ function Todo({
 
 			<div className="btn__employee">
 				{complete ? (
-					<button className="jyy" onClick={completeFn}>
-						{" "}
-						EMPLOYEE{" "}
-					</button>
+					<button>EMPLOYEE</button>
 				) : (
-					<button className="jyy" onClick={completeFn}>
+					<button className="addToEmploy" onClick={completeFn}>
 						ADD TO EMPLOYEE
 					</button>
 				)}

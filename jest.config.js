@@ -1,5 +1,5 @@
 module.exports = {
-	verbose: false,
+	verbose: true,
 	setupFilesAfterEnv: ['<rootDir>/__test__/setup.js'],
 	testMatch: ['<rootDir>/__test__/**/*.test.js'],
 	moduleNameMapper: {

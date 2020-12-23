@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
@@ -175,6 +176,7 @@ function Form({
 					value={input}
 					onChange={e => setInput(e.target.value)}
 					type="text"
+					name='nameField'
 				/>
 
 				<br />
@@ -277,7 +279,7 @@ function Form({
 							className='btnClear'
 							variant="contained"
 							color="secondary"
-							// onClick={() => window.location.reload(true)}
+							onClick={() => window.location.reload(true)}
 						>
 							Clear
 						</Button>
@@ -287,5 +289,14 @@ function Form({
 		</div>
 	);
 }
+
+
+Form.protoTypes = {
+	setInput: PropTypes.string,
+	input: PropTypes.string,
+  setTodos: PropTypes.func,
+	
+	
+};
 
 export default Form;
