@@ -22,7 +22,6 @@ it("stat onChange", () => {
 
 it("should render without crashing.", () => {
 	const data = ['fgfgdg','118111']
-
 	const component = shallow(<TodoItem  filter={data} />);
 	const div = document.createElement("div");
 	div.id = "mainDiv";

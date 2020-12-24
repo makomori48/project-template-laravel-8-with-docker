@@ -11,7 +11,8 @@ function Todo({
 	gender,
 	position,
 	password,
-	complete
+	complete,
+	
 }) {
 	const [pass, setPass] = useState("");
 	const [toinput, setTodoInpit] = useState("");
@@ -22,10 +23,6 @@ function Todo({
 
 	const deleteFn = () => {
 		if (toinput === pass) {
-			setTodos(todos.filter(el => el.id !== todo.id));
-			setPass("");
-			alert("Delete!");
-		} else if (toinput === "admin") {
 			setTodos(todos.filter(el => el.id !== todo.id));
 			setPass("");
 			alert("Delete!");
@@ -49,7 +46,7 @@ function Todo({
 		);
 	};
 
-	console.log(todo);
+	// console.log(todo);
 	return (
 		<div className="todo__con">
 			<img src={pic} alt="" />
@@ -72,7 +69,7 @@ function Todo({
 
 			<div className="btn__employee">
 				{complete ? (
-					<button>EMPLOYEE</button>
+					<button className='employ' >EMPLOYEE</button>
 				) : (
 					<button className="addToEmploy" onClick={completeFn}>
 						ADD TO EMPLOYEE

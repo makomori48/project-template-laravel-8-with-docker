@@ -19,19 +19,6 @@ describe("mount", () => {
 	});
 });
 
-// it("init filter", () => {
-// 	const filMock = jest.fn();
-// 	const event = {
-// 		preventDefault() {},
-// 		target: { status: "st" }
-// 	};
-
-// 	const component = shallow(<Example filterFn={filMock} />);
-
-// 	component.find(filterFn).simulate("change", event);
-// 	expect(filterFn).toBe(true);
-// });
-
 describe("<Example/>", () => {
 	const originalRender = ReactDOM.render;
 	const originalGetElement = global.document.getElementById;
@@ -59,3 +46,36 @@ describe("<Example/>", () => {
 		expect(ReactDOM.render).toHaveBeenCalled();
 	});
 });
+
+// it("init filter", () => {
+// 	const filMock = jest.fn();
+// 	const data = ["aaa", "bbb"];
+// 	const todo = ["ccc", "ddd"];
+// 	const stat = "st";
+
+// 	const component = mount(
+// 		<Example setStatus={stat} todos={data} todo={todo} filterFn={filMock} />
+// 	);
+// 	expect(component).toBe(true);
+// });
+
+// it("filter", () => {
+// 	const setMock = jest.fn();
+
+// 	const psMock = "st";
+// 	const todos = ["aaa", "bbb"];
+// 	const filter = ["bbb", "ccc"];
+// 	const todo = ["eee", "fff"];
+
+// 	const component = shallow(
+// 		<Example
+// 		setFilter={setMock}
+// 			filter={todos}
+// 			todos={filter}
+// 			todo={todo}
+// 			setStatus={psMock}
+// 		/>
+// 	);
+// 	// component.find(".delta").simulate("click");
+// 	// expect(component).not.toBe("");
+// });
