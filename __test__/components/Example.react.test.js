@@ -1,51 +1,57 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import { cleanup } from "@testing-library/react";
-import { mount, shallow } from "enzyme";
+import { render, cleanup } from '@testing-library/react'
+import { mount, shallow } from 'enzyme'
 
-import Example, { renderToDOM } from "@components/Example";
+import Example, { renderToDOM } from '@components/Example'
 
-describe("mount", () => {
-	let wrapper;
+// describe('mount', () => {
+// 	let wrapper
 
-	beforeEach(() => {
-		wrapper = mount(<Example />);
-	});
+// 	beforeEach(() => {
+// 		wrapper = mount(<Example />)
+// 	})
 
-	it("init", () => {
-		const render = wrapper.find(".app");
-		expect(render).not.toBe("");
-	});
-});
+// 	it('init', () => {
+// 		const render = wrapper.find('.app')
+// 		expect(render).not.toBe('')
+// 	})
+// })
 
-describe("<Example/>", () => {
-	const originalRender = ReactDOM.render;
-	const originalGetElement = global.document.getElementById;
+describe('<Example/>', () => {
+	const originalRender = ReactDOM.render
+	const originalGetElement = global.document.getElementById
 
-	beforeEach(() => {
-		global.document.getElementById = () => true;
-		ReactDOM.render = jest.fn();
-	});
-	afterEach(cleanup);
+	// beforeEach(() => {
+	// 	global.document.getElementById = () => true
+	// 	ReactDOM.render = jest.fn()
+	// })
+	// afterEach(cleanup)
 
-	afterAll(() => {
-		global.document.getElementById = originalGetElement;
-		ReactDOM.render = originalRender;
-	});
+	// afterAll(() => {
+	// 	global.document.getElementById = originalGetElement
+	// 	ReactDOM.render = originalRender
+	// })
 
-	it("should render without crashing.", () => {
-		const component = shallow(<Example />);
-		const div = document.createElement("div");
-		div.id = "mainDiv";
-		ReactDOM.render(component, div);
-	});
+	it("should call setStatus with value 'st'", () => {
+		const wrapper = mount(<Example />)
+		console.log(wrapper)
+		wrapper.setStatus('st')
+	})
 
-	it("should call ReactDOM.render", () => {
-		renderToDOM();
-		expect(ReactDOM.render).toHaveBeenCalled();
-	});
-});
+	// it('should render without crashing.', () => {
+	// 	const component = shallow(<Example />)
+	// 	const div = document.createElement('div')
+	// 	div.id = 'mainDiv'
+	// 	ReactDOM.render(component, div)
+	// })
+
+	// it('should call ReactDOM.render', () => {
+	// 	renderToDOM()
+	// 	expect(ReactDOM.render).toHaveBeenCalled()
+	// })
+})
 
 // it("init filter", () => {
 // 	const filMock = jest.fn();
