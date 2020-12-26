@@ -128,11 +128,7 @@ function Form({
 				password: password
 			}
 		]);
-		setInput("");
-		setPic("");
-		setBirth("");
-		setEmail("");
-		setPassword("");
+	
 	};
 
 	const classes = useStyles();
@@ -140,7 +136,11 @@ function Form({
 	return (
 		<div className={classes.form__container}>
 			<h1 className={classes.h1}>ADD TRAINEE</h1>
-			<FormControl className={classes.form__input}>
+			<FormControl 
+			
+			// className={classes.form__input}
+			className='formInputCon'
+			>
 				<div className={classes.root}>
 					<input
 						accept="image/*"
@@ -235,6 +235,7 @@ function Form({
 					<Select
 					className='formSelect'
 						labelId="select-label"
+						defaultValue='Frontend-Developer'
 						value={position}
 						onChange={e => setPosition(e.target.value)}
 					>

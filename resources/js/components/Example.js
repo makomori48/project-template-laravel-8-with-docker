@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import ReactDOM from "react-dom";
 
 import Navbar from "./Navbar";
@@ -6,8 +6,10 @@ import Form from "./Form";
 import TodoItem from "./TodoItem";
 
 function Example() {
+
+	const [status, setStatus] = useState("st");
 	const [password, setPassword] = useState("");
-	const [position, setPosition] = useState("FullStack");
+	const [position, setPosition] = useState("Frontend-Developer");
 	const [gender, setGender] = useState("Male");
 	const [email, setEmail] = useState("");
 	const [birth, setBirth] = useState(new Date());
@@ -16,7 +18,6 @@ function Example() {
 	const [input, setInput] = useState("");
 	const [todos, setTodos] = useState([]);
 
-	const [status, setStatus] = useState("all");
 	const [filter, setFilter] = useState([]);
 
 	const filterFn = () => {
@@ -35,12 +36,12 @@ function Example() {
 		}
 	};
 
-	useEffect(() => {
+	React.useEffect(() => {
 		filterFn();
 		getLocal();
 	}, []);
 
-	useEffect(() => {
+	React.useEffect(() => {
 		filterFn();
 		saveLocal();
 	}, [todos, status]);

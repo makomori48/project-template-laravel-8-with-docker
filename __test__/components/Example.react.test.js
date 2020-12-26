@@ -8,7 +8,6 @@ import Example, { renderToDOM } from "@components/Example";
 
 describe("mount", () => {
 	let wrapper;
-
 	beforeEach(() => {
 		wrapper = mount(<Example />);
 	});
@@ -47,35 +46,28 @@ describe("<Example/>", () => {
 	});
 });
 
-// it("init filter", () => {
-// 	const filMock = jest.fn();
-// 	const data = ["aaa", "bbb"];
-// 	const todo = ["ccc", "ddd"];
-// 	const stat = "st";
+// test("test canmock", () => {
+// 	const instance = mount(<Example filterFn />);
+// 	const spy = jest.spyOn(instance, "filterFn");
+// 	spy.mockReturnValue("aca");
 
-// 	const component = mount(
-// 		<Example setStatus={stat} todos={data} todo={todo} filterFn={filMock} />
-// 	);
-// 	expect(component).toBe(true);
+// 	expect(instance.setStatus("aca")).toBe(true);
+
+// 	spy.mockRestore();
 // });
 
-// it("filter", () => {
-// 	const setMock = jest.fn();
+// test('useState mock', () => {
+// 	const myInitialState = 'setStatus'
+// 	const dat = 'aca'
+// 	React.useState = jest.fn().mockReturnValue([myInitialState, {dat}])
 
-// 	const psMock = "st";
-// 	const todos = ["aaa", "bbb"];
-// 	const filter = ["bbb", "ccc"];
-// 	const todo = ["eee", "fff"];
+// 	const wrapper = shallow(<Example />)
 
-// 	const component = shallow(
-// 		<Example
-// 		setFilter={setMock}
-// 			filter={todos}
-// 			todos={filter}
-// 			todo={todo}
-// 			setStatus={psMock}
-// 		/>
-// 	);
-// 	// component.find(".delta").simulate("click");
-// 	// expect(component).not.toBe("");
+// 	// initial state is set and you can now test your component
+// })
+
+// it('true', () => {
+// 	const loginComponent = mount(<Example setStatus='aca' status='aca' />);
+// 	expect(loginComponent).toMatchSnapshot();
+
 // });

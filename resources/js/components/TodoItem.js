@@ -24,16 +24,18 @@ function TodoItem({ todos, setTodos, setStatus, filter }) {
 		<div className="todoitem">
 			<h1>PROFILE</h1>
 			<FormControl className={classes.formControl}>
-				<InputLabel id="demo-simple-select-label">Filter</InputLabel>
-				<Select
-					labelId="demo-simple-select-label"
+				{/* <InputLabel id="demo-simple-select-label">Filter</InputLabel> */}
+				<select
+					// labelId="demo-simple-select-label"
 					onChange={e => setStatus(e.target.value)}
 					className="jett"
+					defaultValue='all'
+					data-testid='dropdown'
 				>
-					<MenuItem value="all">SHOW All</MenuItem>
-					<MenuItem value="st">EMPLOYEE</MenuItem>
-					<MenuItem value="aca">TRAINEE</MenuItem>
-				</Select>
+					<option data-testid='op'  value="all">SHOW All</option>
+					<option data-testid='op' value="st">EMPLOYEE</option>
+					<option data-testid='op' value="aca">TRAINEE</option>
+				</select>
 			</FormControl>
 
 			<ul className='dataMap' >
